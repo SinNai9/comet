@@ -19,15 +19,15 @@ Project URL: `https://utcduvhgeunwooyxfrvk.supabase.co`
 The frontend uses a Supabase publishable key only. Never commit service-role keys, database passwords, or personal task backups to this public repository.
 
 ## Deploy with GitHub Pages
-1. Upload `index.html`, `style.css`, `app.js`, and the `supabase/` folder to the `main` branch.
-2. Open repository **Settings → Pages**.
-3. Choose **Deploy from a branch**, select `main` and `/(root)`, then save.
-4. Open `https://sinnai9.github.io/comet/` after deployment completes.
-
-In Supabase Authentication URL Configuration, set the deployed Pages URL as Site URL and add it to Redirect URLs.
+A deployment workflow is included at `.github/workflows/pages.yml`.
+1. Open repository **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Save. The workflow deploys on pushes to `main`; you can monitor it in the **Actions** tab.
+4. When the deployment succeeds, open `https://sinnai9.github.io/comet/`.
+5. In Supabase **Authentication → URL Configuration**, set the deployed Pages URL as **Site URL** and add it to **Redirect URLs**.
 
 ## Database schema
-See `supabase/migrations/202610170001_create_comet_tasks.sql`.
+See `supabase/migrations/202610170001_create_comet_tasks.sql`. The live Supabase project already has the task table and per-user RLS policies configured.
 
 ## Backups
 Export JSON from within the app and store it somewhere private. Do not upload personal backups to this public repository.
